@@ -13,7 +13,7 @@ curl -s -X POST http://localhost:8080/api/admin/cities \
 -d '{"name":"Mumbai"}'
 
 # 3. Create theatre
-curl -s -X POST http://localhost:8080/api/admin/theaters \
+curl -s -X POST http://localhost:8080/api/admin/theatres \
 -H "Authorization: Bearer $ADMIN_TOKEN" \
 -H "Content-Type: application/json" \
 -d '{"name":"PVR Phoenix","address":"Lower Parel","cityId":1}'
@@ -74,8 +74,9 @@ curl -s -X POST http://localhost:8080/api/bookings/confirm \
 curl -s http://localhost:8080/api/bookings \
 -H "Authorization: Bearer $CUST_TOKEN" | python3 -m json.tool
 
-  ---
-Sad Flow — Double booking (seat already held by another user)
+---
+
+# Sad Flow — Double booking (seat already held by another user)
 
 # Register a second customer
 CUST2_TOKEN=$(curl -s -X POST http://localhost:8080/api/auth/register \
