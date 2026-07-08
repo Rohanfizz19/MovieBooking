@@ -86,14 +86,14 @@ CUST2_TOKEN=$(curl -s -X POST http://localhost:8080/api/auth/register \
 echo "Customer 2 token: $CUST2_TOKEN"
 
 # Customer 2 tries to hold the SAME seats (1,2) that Customer 1 already booked
-# This will fail with "Seat A1 is not available"
+# This will fail with "One or more seats are not available"
 curl -s -X POST http://localhost:8080/api/bookings/hold \
 -H "Authorization: Bearer $CUST2_TOKEN" \
 -H "Content-Type: application/json" \
 -d '{"showId":1,"showSeatIds":[1,2]}' | python3 -m json.tool
 
 # Expected response:
-# { "success": false, "message": "Seat A1 is not available", "data": null }
+# { "success": false, "message": "One or more seats are not available", "data": null }
 
 # Customer 2 books different seats (3,4) — this works
 curl -s -X POST http://localhost:8080/api/bookings/hold \
