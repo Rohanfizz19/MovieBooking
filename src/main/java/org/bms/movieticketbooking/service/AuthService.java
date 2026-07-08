@@ -1,12 +1,12 @@
 package org.bms.movieticketbooking.service;
 
-import com.movieticketbooking.config.JwtService;
-import com.movieticketbooking.dto.request.LoginRequest;
-import com.movieticketbooking.dto.request.RegisterRequest;
-import com.movieticketbooking.dto.response.AuthResponse;
-import com.movieticketbooking.entity.User;
-import com.movieticketbooking.enums.Role;
-import com.movieticketbooking.repository.UserRepository;
+import org.bms.movieticketbooking.config.JwtService;
+import org.bms.movieticketbooking.dto.request.LoginRequest;
+import org.bms.movieticketbooking.dto.request.RegisterRequest;
+import org.bms.movieticketbooking.dto.response.AuthResponse;
+import org.bms.movieticketbooking.entity.supporting.User;
+import org.bms.movieticketbooking.enums.Role;
+import org.bms.movieticketbooking.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.crypto.password.PasswordEncoder;

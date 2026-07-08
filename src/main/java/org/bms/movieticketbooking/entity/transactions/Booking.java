@@ -1,7 +1,6 @@
 package org.bms.movieticketbooking.entity.transactions;
 
 import jakarta.persistence.*;
-import lombok.Builder;
 import lombok.Data;
 import org.bms.movieticketbooking.entity.content.Show;
 import org.bms.movieticketbooking.entity.supporting.User;
@@ -41,7 +40,6 @@ public class Booking {
     private LocalDateTime createdAt;
 
     @OneToMany(mappedBy = "booking", cascade = CascadeType.ALL, orphanRemoval = true)
-    @Builder.Default
     private List<BookingItem> items = new ArrayList<>();
 
 }

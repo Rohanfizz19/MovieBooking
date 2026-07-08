@@ -4,8 +4,6 @@ import jakarta.persistence.*;
 import lombok.Data;
 import org.bms.movieticketbooking.entity.infra.Screen;
 import org.bms.movieticketbooking.enums.PricingTier;
-import org.springframework.cglib.core.Local;
-
 import java.time.LocalDateTime;
 
 @Entity
